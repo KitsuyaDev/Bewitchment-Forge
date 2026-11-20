@@ -13,7 +13,6 @@ base {
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
-    withSourcesJar()
 }
 
 minecraft {
@@ -35,16 +34,6 @@ minecraft {
         server {
             workingDirectory project.file('run/server')
             args '--nogui'
-        }
-        gameTestServer {
-            workingDirectory project.file('run/gametest')
-            property 'forge.enabledGameTestNamespaces', 'bewitchment'
-            mods {
-                bewitchment {
-                    source sourceSets.main
-                    source sourceSets.test
-                }
-            }
         }
     }
 }
@@ -109,31 +98,4 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.named('jar').configure {
     finalizedBy 'reobfJar'
-}
-
-sourceSets {
-    validation {
-        compileClasspath += sourceSets.test.runtimeClasspath
-    }
-}
-
-tasks.named('processValidationResources').configure {
-    inputs.property('mod_version', mod_version)
-    filesMatching('META-INF/mods.toml') {
-        expand mod_version: mod_version
-    }
-}
-
-tasks.register('validationJar', Jar) {
-    archiveClassifier = 'validation'
-    from(sourceSets.validation.output)
-    from(sourceSets.test.output) {
-        include 'kitsuyadev/bewitchment/ForgePortGameTests.class'
-        include 'data/bewitchment/structures/port_empty.nbt'
-    }
-    finalizedBy 'reobfValidationJar'
-}
-
-reobf {
-    validationJar {}
 }
