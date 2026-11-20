@@ -1,0 +1,30 @@
+/*
+ * All Rights Reserved (c) MoriyaShiine
+ */
+
+package kitsuyadev.bewitchment.mixin;
+
+import com.mojang.authlib.GameProfile;
+import kitsuyadev.bewitchment.common.item.TaglockItem;
+import net.minecraft.commands.arguments.item.ItemInput;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.SkullBlockEntity;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+
+@SuppressWarnings("ConstantConditions")
+@Mixin(ItemInput.class)
+public class ItemStackArgumentMixin {
+	@Inject(method = "createItemStack", at = @At("RETURN"), locals = LocalCapture.CAPTURE_FAILSOFT)
+	private void createStack(int amount, boolean checkOverstack, CallbackInfoReturnable<ItemStack> callbackInfo, ItemStack stack) {
+		if (stack.getItem() instanceof TaglockItem && stack.hasTag() && stack.getTag().contains("OwnerName") && !stack.getTag().contains("OwnerUUID")) {
+			SkullBlockEntity.updateGameprofile(new GameProfile(null, stack.getTag().getString("OwnerName")), gameProfile -> {
+				stack.getTag().putUUID("OwnerUUID", gameProfile.getId());
+				stack.getTag().putBoolean("FromPlayer", true);
+			});
+		}
+	}
+}

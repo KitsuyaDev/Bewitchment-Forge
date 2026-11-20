@@ -1,0 +1,55 @@
+modLoader = "javafml"
+loaderVersion = "[47,48)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "bewitchment"
+version = "${mod_version}"
+displayName = "Bewitchment"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/bewitchment"
+logoFile = "assets/bewitchment/icon.png"
+authors = "KitsuyaDev (Forge port)"
+credits = "Upstream attribution is in META-INF/UPSTREAM-CREDITS.txt"
+description = "A mod that aims to add witchcraft"
+
+[[dependencies.bewitchment]]
+modId = "forge"
+mandatory = true
+versionRange = "[47.2.0,48)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bewitchment]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[${minecraft_version}]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bewitchment]]
+modId = "curios"
+mandatory = true
+versionRange = "[5.14.1,6)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.bewitchment]]
+modId = "patchouli"
+mandatory = true
+versionRange = "[1.20.1-84-FORGE,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.bewitchment]]
+modId = "pehkui"
+mandatory = true
+versionRange = "[3.8.2,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.bewitchment]]
+modId = "midnightlib"
+mandatory = true
+versionRange = "[1.4.2,)"
+ordering = "AFTER"
+side = "BOTH"

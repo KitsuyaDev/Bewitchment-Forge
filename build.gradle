@@ -1,0 +1,139 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '6.0.54'
+    id 'org.spongepowered.mixin' version '0.7.38'
+}
+
+version = mod_version
+group = 'kitsuyadev'
+
+base {
+    archivesName = 'bewitchment'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    withSourcesJar()
+}
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            mods {
+                bewitchment {
+                    source sourceSets.main
+                }
+            }
+        }
+        client {
+            workingDirectory project.file('run/client')
+        }
+        server {
+            workingDirectory project.file('run/server')
+            args '--nogui'
+        }
+        gameTestServer {
+            workingDirectory project.file('run/gametest')
+            property 'forge.enabledGameTestNamespaces', 'bewitchment'
+            mods {
+                bewitchment {
+                    source sourceSets.main
+                    source sourceSets.test
+                }
+            }
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, 'bewitchment.refmap.json'
+    config 'bewitchment.mixins.json'
+}
+
+repositories {
+    maven {
+        name = 'Patchouli'
+        url = 'https://maven.blamejared.com'
+        content { includeGroup 'vazkii.patchouli' }
+    }
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top'
+        content { includeGroup 'top.theillusivec4.curios' }
+    }
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+    maven {
+        name = 'EMI'
+        url = 'https://maven.terraformersmc.com/releases'
+        content { includeGroup 'dev.emi' }
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    implementation fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+    implementation fg.deobf('maven.modrinth:pehkui:SQpqSgAE') // 3.8.2+1.20.1-forge
+    implementation fg.deobf('maven.modrinth:midnightlib:UhRAdyzr') // 1.4.2-forge
+
+    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
+    compileOnly fg.deobf('maven.modrinth:appleskin:XdXDExVF') // 2.5.1+mc1.20.1
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+processResources {
+    def metadata = [mod_version: mod_version, minecraft_version: minecraft_version]
+    inputs.properties metadata
+    filesMatching('META-INF/mods.toml') {
+        expand metadata
+    }
+    from('contributors.properties') {
+        into 'META-INF'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar').configure {
+    finalizedBy 'reobfJar'
+}
+
+sourceSets {
+    validation {
+        compileClasspath += sourceSets.test.runtimeClasspath
+    }
+}
+
+tasks.named('processValidationResources').configure {
+    inputs.property('mod_version', mod_version)
+    filesMatching('META-INF/mods.toml') {
+        expand mod_version: mod_version
+    }
+}
+
+tasks.register('validationJar', Jar) {
+    archiveClassifier = 'validation'
+    from(sourceSets.validation.output)
+    from(sourceSets.test.output) {
+        include 'kitsuyadev/bewitchment/ForgePortGameTests.class'
+        include 'data/bewitchment/structures/port_empty.nbt'
+    }
+    finalizedBy 'reobfValidationJar'
+}
+
+reobf {
+    validationJar {}
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "recipes/root",
+  "rewards": {
+	"recipes": [
+	  "bewitchment:netherite_candelabra"
+	]
+  },
+  "criteria": {
+	"has_item": {
+	  "trigger": "inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"items": [
+			  "netherite_scrap"
+			]
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "recipe_unlocked",
+	  "conditions": {
+		"recipe": "bewitchment:netherite_candelabra"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_item",
+	  "has_the_recipe"
+	]
+  ]
+}

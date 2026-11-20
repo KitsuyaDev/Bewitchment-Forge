@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"TTT",
+	"NIN",
+	" I "
+  ],
+  "key": {
+	"T": {
+	  "item": "torch"
+	},
+	"N": {
+	  "tag": "forge:nuggets/silver"
+	},
+	"I": {
+	  "tag": "forge:ingots/silver"
+	}
+  },
+  "result": {
+	"item": "bewitchment:silver_candelabra"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+	"lava",
+	"magma_block",
+	"fire",
+	"soul_fire",
+	"campfire",
+	"soul_campfire"
+  ]
+}

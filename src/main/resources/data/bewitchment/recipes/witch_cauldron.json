@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	" B ",
+	"SCS",
+	"SSS"
+  ],
+  "key": {
+	"B": {
+	  "tag": "bewitchment:barks"
+	},
+	"S": {
+	  "tag": "forge:ingots/silver"
+	},
+	"C": {
+	  "item": "cauldron"
+	}
+  },
+  "result": {
+	"item": "bewitchment:witch_cauldron"
+  }
+}

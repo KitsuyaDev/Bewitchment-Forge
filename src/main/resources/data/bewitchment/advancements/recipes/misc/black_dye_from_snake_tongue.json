@@ -1,0 +1,34 @@
+{
+  "parent": "recipes/root",
+  "rewards": {
+	"recipes": [
+	  "bewitchment:black_dye_from_snake_tongue"
+	]
+  },
+  "criteria": {
+	"has_item": {
+	  "trigger": "inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"items": [
+			  "bewitchment:snake_tongue"
+			]
+		  }
+		]
+	  }
+	},
+	"has_the_recipe": {
+	  "trigger": "recipe_unlocked",
+	  "conditions": {
+		"recipe": "bewitchment:black_dye_from_snake_tongue"
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_item",
+	  "has_the_recipe"
+	]
+  ]
+}

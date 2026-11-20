@@ -1,0 +1,3 @@
+Original Bewitchment by MoriyaShiine and cybercat5555.
+Original contributors include Aelpecyem and Samaritans.
+Upstream project: https://github.com/MoriyaShiine/bewitchment

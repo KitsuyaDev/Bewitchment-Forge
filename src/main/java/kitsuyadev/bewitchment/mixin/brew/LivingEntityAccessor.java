@@ -1,0 +1,18 @@
+/*
+ * All Rights Reserved (c) MoriyaShiine
+ */
+
+package kitsuyadev.bewitchment.mixin.brew;
+
+import net.minecraft.world.entity.LivingEntity;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.gen.Invoker;
+
+@Mixin(LivingEntity.class)
+public interface LivingEntityAccessor {
+	@Invoker("decreaseAirSupply")
+	int bw_getNextAirUnderwater(int air);
+
+	@Invoker("increaseAirSupply")
+	int bw_getNextAirOnLand(int air);
+}

@@ -1,0 +1,33 @@
+/*
+ * All Rights Reserved (c) MoriyaShiine
+ */
+
+package kitsuyadev.bewitchment.client.render.entity.living;
+
+import kitsuyadev.bewitchment.client.BewitchmentClient;
+import kitsuyadev.bewitchment.client.model.entity.living.RavenEntityModel;
+import kitsuyadev.bewitchment.common.Bewitchment;
+import kitsuyadev.bewitchment.common.entity.living.RavenEntity;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.resources.ResourceLocation;
+
+public class RavenEntityRenderer extends MobRenderer<RavenEntity, RavenEntityModel<RavenEntity>> {
+	private static ResourceLocation[] TEXTURES;
+
+	public RavenEntityRenderer(EntityRendererProvider.Context context) {
+		super(context, new RavenEntityModel<>(context.bakeLayer(BewitchmentClient.RAVEN_MODEL_LAYER)), 0.3f);
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(RavenEntity entity) {
+		if (TEXTURES == null) {
+			int variants = entity.getVariants();
+			TEXTURES = new ResourceLocation[variants];
+			for (int i = 0; i < variants; i++) {
+				TEXTURES[i] = Bewitchment.id("textures/entity/living/raven/" + i + ".png");
+			}
+		}
+		return TEXTURES[entity.getVariant()];
+	}
+}

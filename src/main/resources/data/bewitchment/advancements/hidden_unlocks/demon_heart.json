@@ -1,0 +1,22 @@
+{
+  "parent": "recipes/root",
+  "criteria": {
+	"has_item": {
+	  "trigger": "inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"items": [
+			  "bewitchment:demon_heart"
+			]
+		  }
+		]
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_item"
+	]
+  ]
+}

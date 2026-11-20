@@ -1,0 +1,21 @@
+/*
+ * All Rights Reserved (c) MoriyaShiine
+ */
+
+package kitsuyadev.bewitchment.common.fortune;
+
+import kitsuyadev.bewitchment.api.registry.Fortune;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.player.Player;
+
+public class WisdomFortune extends Fortune {
+	public WisdomFortune(boolean positive) {
+		super(positive);
+	}
+
+	@Override
+	public boolean finish(ServerLevel world, Player target) {
+		target.giveExperiencePoints(551);
+		return super.finish(world, target);
+	}
+}

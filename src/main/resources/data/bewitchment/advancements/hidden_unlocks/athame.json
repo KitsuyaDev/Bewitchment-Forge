@@ -1,0 +1,22 @@
+{
+  "parent": "recipes/root",
+  "criteria": {
+	"has_item": {
+	  "trigger": "inventory_changed",
+	  "conditions": {
+		"items": [
+		  {
+			"items": [
+			  "bewitchment:athame"
+			]
+		  }
+		]
+	  }
+	}
+  },
+  "requirements": [
+	[
+	  "has_item"
+	]
+  ]
+}

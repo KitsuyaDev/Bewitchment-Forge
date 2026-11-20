@@ -1,0 +1,18 @@
+{
+  "type": "bewitchment:ritual_recipe",
+  "ingredients": [
+	{
+	  "item": "bewitchment:heaven_extract"
+	},
+	{
+	  "item": "copper_ingot"
+	},
+	{
+	  "item": "redstone"
+	}
+  ],
+  "inner": "normal",
+  "outer": "fiery",
+  "ritual_function": "bewitchment:spawn_lightning",
+  "cost": 150
+}

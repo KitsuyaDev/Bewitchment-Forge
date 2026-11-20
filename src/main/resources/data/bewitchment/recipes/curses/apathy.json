@@ -1,0 +1,19 @@
+{
+  "type": "bewitchment:curse_recipe",
+  "ingredients": [
+	{
+	  "item": "bewitchment:taglock"
+	},
+	{
+	  "item": "bewitchment:demon_heart"
+	},
+	{
+	  "item": "bewitchment:ectoplasm"
+	},
+	{
+	  "item": "skeleton_skull"
+	}
+  ],
+  "curse": "bewitchment:apathy",
+  "cost": 800
+}

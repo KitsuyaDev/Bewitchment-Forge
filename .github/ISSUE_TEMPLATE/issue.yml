@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible issue with the Bewitchment Forge port
+body:
+  - type: input
+    attributes:
+      label: Bewitchment version
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Forge version and modpack version
+      description: Include the modpack name and version if applicable.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Include what you expected and what happened.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Log or crash report
+      description: Remove account identifiers, private paths and credentials before sharing logs.

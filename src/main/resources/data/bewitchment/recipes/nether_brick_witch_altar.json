@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"MBM",
+	" M ",
+	"MSM"
+  ],
+  "key": {
+	"M": {
+	  "item": "nether_bricks"
+	},
+	"B": {
+	  "tag": "bewitchment:barks"
+	},
+	"S": {
+	  "tag": "forge:ingots/silver"
+	}
+  },
+  "result": {
+	"item": "bewitchment:nether_brick_witch_altar"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+	"#logs",
+	"#leaves",
+	"#saplings",
+	"#flowers",
+	"#bee_growables",
+	"#flower_pots",
+	"#wart_blocks",
+	"pumpkin",
+	"melon",
+	"hay_block",
+	"vine",
+	"cactus",
+	"sugar_cane",
+	"shroomlight",
+	"chorus_plant",
+	"chorus_flower",
+	"bewitchment:glowing_bramble",
+	"bewitchment:ender_bramble",
+	"bewitchment:fruiting_bramble",
+	"bewitchment:scorched_bramble",
+	"bewitchment:thick_bramble",
+	"bewitchment:fleeting_bramble"
+  ]
+}

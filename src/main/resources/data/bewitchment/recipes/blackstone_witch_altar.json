@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"MBM",
+	" M ",
+	"MSM"
+  ],
+  "key": {
+	"M": {
+	  "item": "blackstone"
+	},
+	"B": {
+	  "tag": "bewitchment:barks"
+	},
+	"S": {
+	  "tag": "forge:ingots/silver"
+	}
+  },
+  "result": {
+	"item": "bewitchment:blackstone_witch_altar"
+  }
+}

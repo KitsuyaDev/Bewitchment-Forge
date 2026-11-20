@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+	{
+	  "item": "bewitchment:white_coffin"
+	},
+	{
+	  "item": "yellow_dye"
+	}
+  ],
+  "result": {
+	"item": "bewitchment:yellow_coffin"
+  }
+}

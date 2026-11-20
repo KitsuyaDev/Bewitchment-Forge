@@ -1,0 +1,8 @@
+{
+  "type": "bewitchment:cauldron_brewing_recipe",
+  "ingredient": {
+	"tag": "forge:mushrooms"
+  },
+  "effect": "weakness",
+  "time": 1200
+}

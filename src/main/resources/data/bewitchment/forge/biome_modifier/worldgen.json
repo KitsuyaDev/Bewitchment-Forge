@@ -1,0 +1,8 @@
+{
+  "type": "bewitchment:worldgen",
+  "juniper": "bewitchment:tree_juniper",
+  "cypress": "bewitchment:tree_cypress",
+  "elder": "bewitchment:tree_elder",
+  "salt": ["bewitchment:ore_salt_lower", "bewitchment:ore_salt_upper"],
+  "silver": ["bewitchment:ore_silver", "bewitchment:ore_silver_lower"]
+}

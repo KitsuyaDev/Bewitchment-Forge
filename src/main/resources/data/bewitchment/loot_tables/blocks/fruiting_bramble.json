@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+	{
+	  "rolls": 1,
+	  "entries": [
+		{
+		  "type": "minecraft:item",
+		  "name": "bewitchment:fruiting_bramble"
+		}
+	  ],
+	  "conditions": [
+		{
+		  "condition": "minecraft:survives_explosion"
+		}
+	  ]
+	},
+	{
+	  "rolls": 1,
+	  "entries": [
+		{
+		  "type": "minecraft:item",
+		  "conditions": [
+			{
+			  "condition": "block_state_property",
+			  "block": "bewitchment:fruiting_bramble",
+			  "properties": {
+				"level": "8"
+			  }
+			}
+		  ],
+		  "name": "bewitchment:witchberry"
+		}
+	  ],
+	  "conditions": [
+		{
+		  "condition": "minecraft:survives_explosion"
+		}
+	  ]
+	}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "bewitchment:ritual_recipe",
+  "ingredients": [
+	{
+	  "item": "bewitchment:cleansing_balm"
+	},
+	{
+	  "item": "bewitchment:taglock"
+	},
+	{
+	  "item": "golden_apple"
+	}
+  ],
+  "inner": "normal",
+  "outer": "fiery",
+  "ritual_function": "bewitchment:cleanse",
+  "cost": 300
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"MBM",
+	" M ",
+	"MSM"
+  ],
+  "key": {
+	"M": {
+	  "item": "end_stone"
+	},
+	"B": {
+	  "tag": "bewitchment:barks"
+	},
+	"S": {
+	  "tag": "forge:ingots/silver"
+	}
+  },
+  "result": {
+	"item": "bewitchment:end_stone_witch_altar"
+  }
+}

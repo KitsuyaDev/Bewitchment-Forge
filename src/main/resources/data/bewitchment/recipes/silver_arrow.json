@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"N",
+	"S",
+	"F"
+  ],
+  "key": {
+	"N": {
+	  "tag": "forge:nuggets/silver"
+	},
+	"S": {
+	  "item": "stick"
+	},
+	"F": {
+	  "item": "feather"
+	}
+  },
+  "result": {
+	"item": "bewitchment:silver_arrow",
+	"count": 4
+  }
+}

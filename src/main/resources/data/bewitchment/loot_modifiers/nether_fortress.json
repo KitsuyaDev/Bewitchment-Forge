@@ -1,0 +1,6 @@
+{
+  "type": "bewitchment:add_referenced_loot",
+  "conditions": [],
+  "targets": ["minecraft:chests/nether_bridge"],
+  "loot_table": "bewitchment:inject/nether_fortress"
+}

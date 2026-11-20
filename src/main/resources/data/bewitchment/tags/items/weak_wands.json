@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+	"torch",
+	"soul_torch",
+	"lantern",
+	"soul_lantern",
+	"bewitchment:iron_candelabra"
+  ]
+}

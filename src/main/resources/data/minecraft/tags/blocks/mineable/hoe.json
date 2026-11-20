@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+	"bewitchment:golden_glyph",
+	"bewitchment:glyph",
+	"bewitchment:fiery_glyph",
+	"bewitchment:eldritch_glyph",
+	"bewitchment:juniper_leaves",
+	"bewitchment:cypress_leaves",
+	"bewitchment:elder_leaves",
+	"bewitchment:dragons_blood_leaves",
+	"bewitchment:dragons_blood_resin_block"
+  ]
+}

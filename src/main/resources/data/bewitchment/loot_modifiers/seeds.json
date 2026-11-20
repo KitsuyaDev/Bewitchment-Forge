@@ -1,0 +1,6 @@
+{
+  "type": "bewitchment:add_referenced_loot",
+  "conditions": [],
+  "targets": ["minecraft:blocks/grass", "minecraft:blocks/fern", "minecraft:blocks/tall_grass", "minecraft:blocks/large_fern"],
+  "loot_table": "bewitchment:inject/seeds"
+}

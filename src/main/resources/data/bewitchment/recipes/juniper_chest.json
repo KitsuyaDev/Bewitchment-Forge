@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"###",
+	"#N#",
+	"###"
+  ],
+  "key": {
+	"#": {
+	  "item": "bewitchment:juniper_planks"
+	},
+	"N": {
+	  "tag": "forge:nuggets/silver"
+	}
+  },
+  "result": {
+	"item": "bewitchment:juniper_chest"
+  }
+}
